@@ -4,13 +4,15 @@ ul {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    margin: auto;
 }
 li {
     padding: 10px;
-    width: 250px;
-    max-width: 250px;
+    width: 270px;
+    max-width: 280px;
     max-height: 400px;
     list-style: none;
+    margin-bottom: 12vh;
 }
 .card {
     padding: 5px;
@@ -22,9 +24,9 @@ li {
     justify-content: center;
     border-radius: 5px;
 }
-.card>img {
-    height: 300px;
-    width: 100%;
+.card img {
+    height: 310px;
+    width: 99%;
 }
 .card article {
     padding: 5px;

@@ -12,7 +12,7 @@ function Header() {
       <AppBar sx={{backgroundColor:"#232F3D"}} position='sticky'>
         <Toolbar>
           <Typography>
-            <Libraryicon />
+          <NavLink to={"/"} style={{color:'white'}}> <Libraryicon /> </NavLink>
           </Typography>
 
           <Tabs sx={{ml: "auto"}} textColor='inherit' indicatorColor='primary' value={value} onChange={(e,val)=>setValue(val)}>

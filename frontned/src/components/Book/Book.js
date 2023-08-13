@@ -1,9 +1,19 @@
 import React from 'react';
 import { Button } from '@mui/material';
-import "./Book.css"
+import axios from "axios";
+import "./Book.css";
+import {Link, useNavigate} from 'react-router-dom'
 
 const Book = (props) => {
     const { _id, name, description, price, author, image } = props.book;
+    const history = useNavigate();
+
+    const delectHandler = async () => {
+        await axios.delete(`http://localhost:5000/books/${_id}`)
+          .then((res) => res.data)
+          .then(() => history("/books"));
+          window.location.reload();
+      };
     const imageUrl = `http://localhost:5000/uploads/${image}`;
     return (
         <div className='card'>
@@ -12,8 +22,8 @@ const Book = (props) => {
             <article>By {author}</article>
             <p>{description}</p> 
             <h2>Rs. {price}</h2>
-            <Button>Update</Button>
-            <Button>Delete</Button>
+            <Button LinkComponent={Link} to={`/books/${_id}`}>Update</Button>
+            <Button onClick={delectHandler}>Delete</Button>
         </div>
     );
 };
